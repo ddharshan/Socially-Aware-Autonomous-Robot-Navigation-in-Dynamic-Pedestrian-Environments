@@ -198,7 +198,7 @@ If you use this repository, its source code, or experimental results in your res
 
 ```bibtex
 @misc{seetharaman2026sociallyaware,
-  author       = {Seetharaman, Dhivyadharshan},
+  author       = {Seetharaman Dhivyadharshan},
   title        = {Socially Aware Autonomous Robot Navigation in Dynamic Pedestrian Environments},
   year         = {2026},
   howpublished = {GitHub repository},
