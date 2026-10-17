@@ -1,0 +1,50 @@
+f6c15c4
+
+commit f6c15c4a4876cfceab1c352f8a31fae0f3cf5ab9
+Author: Dharshan <108181384+ddharshan@users.noreply.github.com>
+Date:   Fri Jan 30 15:30:37 2026 +0530
+
+    Include contact email in README
+    
+    Added contact information for inquiries.
+
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 1032c8c6135f5b537e580abb7308f46c82fb05eb
+Author: Dharshan <108181384+ddharshan@users.noreply.github.com>
+Date:   Fri Jan 30 15:30:01 2026 +0530
+
+    Update README.md
+
+ README.md | 16 ++++++++++------
+ 1 file changed, 10 insertions(+), 6 deletions(-)
+
+commit 16a5dcd6e882df3cfe2e49716141755e45bad58b
+Author: Dharshan <108181384+ddharshan@users.noreply.github.com>
+Date:   Fri Jan 30 15:26:53 2026 +0530
+
+    Enhance README with project details and citation
+    
+    Added project description, author information, and citation details.
+
+ README.md | 31 +++++++++++++++++++++++++++++++
+ 1 file changed, 31 insertions(+)
+
+commit be922c00e7564b00636e30e0f1f48b5a3c6c8b1e
+Author: Dharshan <108181384+ddharshan@users.noreply.github.com>
+Date:   Fri Jan 30 15:07:33 2026 +0530
+
+    Add MIT License to the project
+
+ LICENSE | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
+
+commit d93494d4aa3afb075033276c888d078161c988fa
+Author: Dharshan <108181384+ddharshan@users.noreply.github.com>
+Date:   Fri May 2 14:39:35 2025 +0530
+
+    Update README.md
+
+ README.md | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
