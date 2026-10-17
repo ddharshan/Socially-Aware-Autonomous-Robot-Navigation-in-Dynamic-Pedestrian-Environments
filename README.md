@@ -73,10 +73,8 @@ Fine-tune cautiously from promising checkpoints
 Add pedestrian- and boundary-proximity reward shaping
                  |
                  v
-Select path-71-good and validate over 3 x 1,000 episodes
-                 |
-                 v
-Compare later experimental branches; retain best validated model
+Finally selected the best path "path-71-good" and validate over 3 x 1,000 episodes
+
 ```
 
 ## Main experiments and lessons learned
