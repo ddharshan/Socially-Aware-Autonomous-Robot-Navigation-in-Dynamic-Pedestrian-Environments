@@ -1,0 +1,11 @@
+2nd Testing 
+============================================================
+FINAL 30-EPISODE PATH-71 TEST SUMMARY
+============================================================
+Episodes tested: 30
+Goal-reaching success rate: 24/30 = 80.00%
+Collision failure rate: 3/30 = 10.00%
+Boundary violation rate: 3/30 = 10.00%
+Timeout / stuck failure rate: 0/30 = 0.00%
+Unknown rate: 0/30 = 0.00%
+
