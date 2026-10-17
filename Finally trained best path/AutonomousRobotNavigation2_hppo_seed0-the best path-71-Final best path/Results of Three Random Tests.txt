@@ -1,0 +1,98 @@
+1000 episodes (1st Time testing)
+ ============================================
+FINAL 1000-EPISODE TEST SUMMARY
+============================================
+Episodes tested: 1000
+Goal-reaching success rate: 851/1000 = 85.10%
+Collision failure rate: 120/1000 = 12.00%
+Boundary violation rate: 29/1000 = 2.90%
+Timeout / stuck failure rate: 0/1000 = 0.00%
+Unknown rate: 0/1000 = 0.00%
+--------------------------------------------
+Average reward: 9.5219
+Average steps, all episodes: 405.34
+Average time, all episodes: 2.0267
+Average steps to reach goal only: 427.97
+Average time to reach goal only: 2.1398
+Average minimum distance to pedestrians: 0.3996
+Global minimum distance to pedestrians: 0.1959
+--------------------------------------------
+Total social norm opportunities: 8133
+Total social norm compliant steps: 2697
+Social norm compliance rate: 33.16%
+--------------------------------------------
+Average speed: 1.8491
+Average smoothness, abs speed change: 0.004899
+Average smoothness, action switch rate: 0.3194
+============================================
+ 
+
+
+
+
+
+1000 episodes (2nd  Time testing)
+ 
+============================================
+FINAL 1000-EPISODE TEST SUMMARY
+============================================
+Episodes tested: 1000
+Goal-reaching success rate: 849/1000 = 84.90%
+Collision failure rate: 110/1000 = 11.00%
+Boundary violation rate: 40/1000 = 4.00%
+Timeout / stuck failure rate: 1/1000 = 0.10%
+Unknown rate: 0/1000 = 0.00%
+--------------------------------------------
+Average reward: 9.5660
+Average steps, all episodes: 409.80
+Average time, all episodes: 2.0490
+Average steps to reach goal only: 430.08
+Average time to reach goal only: 2.1504
+Average minimum distance to pedestrians: 0.3936
+Global minimum distance to pedestrians: 0.1981
+--------------------------------------------
+Total social norm opportunities: 8389
+Total social norm compliant steps: 2762
+Social norm compliance rate: 32.92%
+--------------------------------------------
+Average speed: 1.8445
+Average smoothness, abs speed change: 0.004674
+Average smoothness, action switch rate: 0.3184
+============================================
+
+
+
+
+
+
+
+
+
+1000 episodes (3rd Time testing)
+
+============================================
+FINAL 1000-EPISODE TEST SUMMARY
+============================================
+Episodes tested: 1000
+Goal-reaching success rate: 865/1000 = 86.50%
+Collision failure rate: 97/1000 = 9.70%
+Boundary violation rate: 37/1000 = 3.70%
+Timeout / stuck failure rate: 1/1000 = 0.10%
+Unknown rate: 0/1000 = 0.00%
+--------------------------------------------
+Average reward: 9.8797
+Average steps, all episodes: 413.23
+Average time, all episodes: 2.0661
+Average steps to reach goal only: 431.98
+Average time to reach goal only: 2.1599
+Average minimum distance to pedestrians: 0.3961
+Global minimum distance to pedestrians: 0.1951
+--------------------------------------------
+Total social norm opportunities: 8410
+Total social norm compliant steps: 3146
+Social norm compliance rate: 37.41%
+--------------------------------------------
+Average speed: 1.8387
+Average smoothness, abs speed change: 0.004575
+Average smoothness, action switch rate: 0.3181
+============================================
