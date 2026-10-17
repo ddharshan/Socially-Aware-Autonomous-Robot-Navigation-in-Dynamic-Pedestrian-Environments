@@ -153,6 +153,7 @@ The final selected model, **`path-71-good`**, achieved an average goal-reaching 
 
  
 
+
 ### Selected checkpoints during development
 
 | Checkpoint | Example recorded 1,000-episode success rate | Research significance |
@@ -165,7 +166,8 @@ The final selected model, **`path-71-good`**, achieved an average goal-reaching 
 | `path-72` | 82.9% | Alternative goal-aware boundary shaping did not outperform path 71 |
 | `path-77` | 85.5% | Later experimental branch; not consistently superior |
 
-**Interpretation:** Individual checkpoint figures in the second table are selected recorded tests, not a controlled same-seed benchmark. They should not be interpreted as statistically isolated effects of individual reward modifications.
+
+
 
 Three additional **30-episode** evaluations of `path-71-good` each recorded **24/30 successes (80%)**; these short evaluations are useful for demonstrations but are less representative than the larger tests.
 
