@@ -1,0 +1,22 @@
+============================================================
+FINAL 30-EPISODE PATH-71 TEST SUMMARY
+============================================================
+Episodes tested: 30
+Goal-reaching success rate: 24/30 = 80.00%
+Collision failure rate: 3/30 = 10.00%
+Boundary violation rate: 3/30 = 10.00%
+Timeout / stuck failure rate: 0/30 = 0.00%
+Unknown rate: 0/30 = 0.00%
+------------------------------------------------------------
+Average reward: 9.4330
+Average steps, all episodes: 417.30
+Average time, all episodes: 2.0865
+Average steps to reach goal only: 443.46
+Average time to reach goal only: 2.2173
+Average minimum distance to pedestrians: 0.4101
+Global minimum distance to pedestrians: 0.2000
+------------------------------------------------------------
+Total social norm opportunities: 108
+Total social norm compliant steps: 46
+Social norm compliance rate: 42.59%
+----------------------------------------
