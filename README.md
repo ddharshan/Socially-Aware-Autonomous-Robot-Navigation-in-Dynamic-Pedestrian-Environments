@@ -151,7 +151,7 @@ The final selected model, **`path-71-good`**, achieved an average goal-reaching 
 
 **Combined success:** (851 + 849 + 865) / 3,000 = **85.5%**.
 
-*Social-norm compliance is reported according to the evaluation script's defined opportunities and compliant steps; it should not be interpreted as a universal pedestrian-safety score.*
+ 
 
 ### Selected checkpoints during development
 
