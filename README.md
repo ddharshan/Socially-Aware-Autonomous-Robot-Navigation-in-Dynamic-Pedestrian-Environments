@@ -114,7 +114,7 @@ Further experiments focused on improving navigation safety by adjusting:
 
 The selected **`path-71-good`** model was obtained by fine-tuning a previously identified promising checkpoint (**`path-66-good`**).
 
-Subsequent experiments involving stronger or goal-aware safety penalties did not consistently outperform the selected model.
+ 
 
 ### 5. Reliable Model Selection and Performance Evaluation
 
