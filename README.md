@@ -190,23 +190,22 @@ The evaluation workflow records goal-reaching success, pedestrian collisions, bo
 
 ```
 
- 
+## Citing This Repository
 
+If you use this repository, its source code, or experimental results in your research, please cite:
 
+### BibTeX
 
-## Reproducing the experiments
+```bibtex
+@misc{seetharaman2026sociallyaware,
+  author       = {Seetharaman, Dhivyadharshan},
+  title        = {Socially Aware Autonomous Robot Navigation in Dynamic Pedestrian Environments},
+  year         = {2026},
+  howpublished = {GitHub repository},
+  url          = {https://github.com/ddharshan/Socially-Aware-Autonomous-Robot-Navigation-in-Dynamic-Pedestrian-Environments}
+}
+```
 
-The environment package and H-PPO training package have their own dependencies and import paths. Review their configuration and entry scripts before running. Exact installation commands, tested dependency versions, checkpoint download paths and reproducibility seeds will be documented after validation against the published code. The evaluation results above come from the recorded research experiments and should not be assumed automatically reproducible without the corresponding checkpoint and configuration.
-
-## Scope and future work
-
-**Completed and documented:** six-pedestrian environment extension; H-PPO training/fine-tuning; multiple reward-shaping changes; repeated randomized simulation evaluation; and checkpoint comparison/selection.
-
-**Planned or not yet demonstrated in these records:** full curriculum-learning study, controlled ablation/baseline comparisons, randomized pedestrian-speed and sensor-noise robustness studies, predictive/time-to-collision safety methods, and physical-robot validation. These are research directions rather than claimed completed results.
-
-## Relationship to the MSc project
-
-This work builds upon the original MSc autonomous robot navigation research and extends it with a more challenging pedestrian environment, refined reward shaping and more extensive evaluation. The original research repository is available at [RLAutonomousRobotNavigation2](https://github.com/ddharshan/RLAutonomousRobotNavigation2).
 
 ## License
 
