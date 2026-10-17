@@ -175,19 +175,24 @@ Three additional **30-episode** evaluations of `path-71-good` each recorded **24
 
 The evaluation workflow records goal-reaching success, pedestrian collisions, boundary violations, timeouts/stuck failures, average reward, episode steps/time, minimum pedestrian separation, social-norm compliance, average speed and motion smoothness.
 
-## Repository structure
+## Repository Structure
 
 ```text
 .
-├── RLAutonomousRobotNavigation2/  # Custom robot-navigation simulation environment
-├── RobotTraining2/               # H-PPO configuration, environment wrapper and evaluation code
-├── visualize_environment_random.py  # Environment visualization using random actions (not a trained-policy demo)
-├── .gitignore
-├── LICENSE
-└── README.md
-```
+├── Final Random testing Results/       # Randomized navigation evaluation results
+├── Finally trained best path/          # Best trained H-PPO model and checkpoint files
+├── RLAutonomousRobotNavigation2/       # Custom robot-navigation simulation environment
+├── RobotTraining2/                     # H-PPO training, configuration, and evaluation code
+├── .gitignore                          # Git ignore configuration
+├── LICENSE                             # MIT License
+├── README.md                           # Project documentation
+└── visualize_environment_random.py     # Environment visualization using random actions
 
-The environment and training code are maintained together so the simulation and policy-learning workflow can be examined in one repository. The random-action visualization script is **not** evidence of trained H-PPO performance.
+
+
+ 
+
+
 
 ## Reproducing the experiments
 
