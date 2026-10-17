@@ -14,8 +14,10 @@ This repository presents an extension of my MSc research on autonomous mobile ro
 - Evaluate the trained policy across repeated randomized scenarios using more than reward alone.
 
 
-## Original MSc Research Publication:  https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5178305 
-## Original Source Code: GitHub Repository : https://github.com/ddharshan/RLAutonomousRobotNavigation2/tree/main 
+**Original MSc Research Publication:  https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5178305** 
+**Original Source Code: GitHub Repository : https://github.com/ddharshan/RLAutonomousRobotNavigation2/tree/main**
+
+
 
 ## What changed compared with the MSc work?
 
