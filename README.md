@@ -77,27 +77,64 @@ Finally selected the best path "path-71-good" and validate over 3 x 1,000 episod
 
 ```
 
-## Main experiments and lessons learned
 
-### 1. H-PPO training and hyperparameter optimization
+## Main Experiments and Lessons Learned
 
-Training used saved best checkpoints as starting points for subsequent fine-tuning. TensorBoard was used to inspect collector and evaluator rewards, training duration and environment-step throughput. Experiments adjusted learning rate, entropy weight, PPO clipping ratio, epochs per collection and evaluation frequency. More aggressive combinations sometimes caused instability or crashes, motivating progressively gentler fine-tuning.
+### 1. H-PPO Training and Hyperparameter Optimization
 
-### 2. Improving goal-reaching behaviour
+Training was conducted using the best-performing saved checkpoints as starting points for subsequent fine-tuning. TensorBoard was used to monitor collector and evaluator rewards, training duration, and environment-step throughput. Several experiments were conducted by adjusting the learning rate, entropy weight, PPO clipping ratio, epochs per collection, and evaluation frequency. More aggressive hyperparameter combinations occasionally resulted in training instability or crashes, leading to the adoption of progressively more conservative fine-tuning strategies.
 
-Early evaluation videos showed the robot sometimes circling near its goal. The environment/reward logic was revised to encourage slowing near the destination, avoid penalizing legitimate deceleration as being stuck, and use a more practical goal-reaching radius. The research notes report less circling after these changes.
+### 2. Improving Goal-Reaching Behaviour
 
-### 3. Collision avoidance and social-norm reward alignment
+Initial evaluation videos revealed that the robot occasionally circled around its target instead of reaching it directly.
 
-Initial large-scale tests revealed substantial collision rates. The terminal collision penalty was increased from **-5 to -8**. Later, a behavioural problem was identified: the robot could move toward pedestrians to earn social-norm rewards instead of progressing to the goal. Social-norm reward was therefore made conditional on **goal-directed progress**.
+To address this issue, the environment and reward function were modified to:
 
-### 4. Pedestrian and boundary safety shaping
+- Encourage the robot to reduce its speed near the destination.
+- Prevent legitimate deceleration from being penalized as a stuck condition.
+- Introduce a more practical goal-reaching radius.
 
-Subsequent experiments adjusted the pedestrian-proximity warning threshold, social-interaction zone and boundary-proximity penalty. The selected `path-71-good` model was obtained through fine-tuning from a previously protected promising checkpoint (`path-66-good`). Later experiments with stronger or goal-aware safety penalties did not consistently outperform this selection.
+Subsequent evaluations showed a reduction in goal-circling behaviour.
 
-### 5. Reliable model selection
+### 3. Collision Avoidance and Social-Norm Reward Alignment
 
-A favourable 12-episode evaluation was not treated as sufficient evidence of robust performance. Selected checkpoints were evaluated over hundreds or thousands of randomized episodes, including repeated **1,000-episode** tests. Model selection considered goal-reaching success and failure modes, not only mean reward.
+Initial large-scale evaluations revealed relatively high collision rates. To improve collision avoidance, the terminal collision penalty was increased from **−5 to −8**.
+
+Further evaluations identified an unintended behaviour in which the robot occasionally approached pedestrians to obtain social-norm rewards rather than progressing toward its destination.
+
+To address this issue, the social-norm reward was modified to be conditional on **goal-directed progress**, encouraging socially compliant navigation while maintaining progress toward the target.
+
+### 4. Pedestrian and Boundary Safety Reward Shaping
+
+Further experiments focused on improving navigation safety by adjusting:
+
+- Pedestrian-proximity warning thresholds.
+- Social-interaction zones.
+- Boundary-proximity penalties.
+
+The selected **`path-71-good`** model was obtained by fine-tuning a previously identified promising checkpoint (**`path-66-good`**).
+
+Subsequent experiments involving stronger or goal-aware safety penalties did not consistently outperform the selected model.
+
+### 5. Reliable Model Selection and Performance Evaluation
+
+Initial evaluations demonstrated that achieving a high success rate over only 12 episodes was insufficient to establish reliable navigation performance.
+
+Therefore, selected checkpoints were evaluated across hundreds or thousands of randomized episodes, including repeated **1,000-episode evaluations**.
+
+Model selection was based on:
+
+- Goal-reaching success rates.
+- Collision rates.
+- Boundary violations.
+- Timeout rates.
+- Average episode rewards.
+- Additional navigation performance metrics.
+
+The final selected model, **`path-71-good`**, achieved an average goal-reaching success rate of **85.5% across three independent 1,000-episode simulation evaluations**, with the highest individual success rate reaching **86.5%**.
+
+
+
 
 ## Quantitative results
 
