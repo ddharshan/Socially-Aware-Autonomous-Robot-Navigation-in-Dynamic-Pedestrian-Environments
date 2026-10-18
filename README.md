@@ -275,7 +275,7 @@ The evaluation workflow records goal-reaching success, pedestrian collisions, bo
 
 ## Reward Function
 
-The environment implements a reward-shaping function to encourage goal-directed navigation, collision avoidance, socially aware pedestrian interactions, boundary safety, and controlled movement near the goal.
+The environment implements a reward-shaping function to encourage goal-directed navigation, collision avoidance, socially aware pedestrian interactions, boundary safety, and controlled movement near the goal. Moreover, after the following modifications to the reward functions, such as adding a near-goal speed penalty, modifying the stuck penalty near the goal, and increasing the goal size, the robot's behaviour of circling near the goal was significantly mitigated, and the total mean rewards increased during training.
 
 ###  
 
