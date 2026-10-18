@@ -181,6 +181,7 @@ The evaluation workflow records goal-reaching success, pedestrian collisions, bo
 The environment implements a reward-shaping function to encourage goal-directed navigation, collision avoidance, socially aware pedestrian interactions, boundary safety, and controlled movement near the goal.
 
 ###  
+
 ## 1. Complete Shaped Reward Function
 
 The shaped reward is calculated by the `get_reward()` function (lines 722–824 of `environments.py`).
@@ -194,7 +195,7 @@ R_{\mathrm{shaped}}={}&
 &+0.005I_{\mathrm{norm}}I_{\mathrm{progress}}\\
 &-0.65\max(0,0.30-d_{\min})\\
 &-0.05\max(0,0.20-d_{\mathrm{boundary}})\\
-&-0.02|v_R|I_{\mathrm{slow}}\\
+&-0.02\lvert v_R\rvert I_{\mathrm{slow}}\\
 &-0.002I_{\mathrm{stuck}}
 \end{aligned}
 }
@@ -210,7 +211,7 @@ $$
 | Social-norm reward | $+0.005I_{\mathrm{norm}}I_{\mathrm{progress}}$ | Rewards qualifying social interactions with sufficient goal progress |
 | Pedestrian danger | $-0.65\max(0,0.30-d_{\min})$ | Penalizes proximity to pedestrians below 0.30 m |
 | Boundary safety | $-0.05\max(0,0.20-d_{\mathrm{boundary}})$ | Penalizes proximity to the environment boundary |
-| Near-goal speed | $-0.02|v_R|I_{\mathrm{slow}}$ | Encourages slowing down near the goal |
+| Near-goal speed | $-0.02\lvert v_R\rvert I_{\mathrm{slow}}$ | Encourages slowing down near the goal |
 | Stuck penalty | $-0.002I_{\mathrm{stuck}}$ | Penalizes negligible progress away from the goal |
 
 ### Distance Definitions
@@ -231,7 +232,7 @@ $$
 Distance to the environment boundary:
 
 $$
-d_{\mathrm{boundary}}=2.0-\max(|x_R|,|y_R|)
+d_{\mathrm{boundary}}=2.0-\max(\lvert x_R\rvert,\lvert y_R\rvert)
 $$
 
 All distances in the reward calculation are evaluated after the action, except $d_t$, which represents the preceding robot-to-goal distance.
@@ -261,7 +262,7 @@ Stuck indicator:
 $$
 I_{\mathrm{stuck}}=
 \mathbf{1}\left[
-|d_t-d_{t+1}|<0.0005
+\lvert d_t-d_{t+1}\rvert<0.0005
 \;\land\;
 d_{t+1}>0.30
 \;\land\;
@@ -285,11 +286,44 @@ $$
 
 The first pedestrian satisfying this distance condition is evaluated for the following social interactions.
 
-| Interaction | Mathematical Condition |
-|---|---|
-| Passing | $\frac{3\pi}{4}<|\theta_{P_i,n}-\theta_{R,n}|<\pi$ |
-| Crossing | $\frac{\pi}{4}<\theta_{P_i,n}-\theta_{R,n}<\frac{3\pi}{4}\;\land\;|v_{P_i}|>|v_R|$ |
-| Overtaking | $0<\theta_{R,n}-\theta_{P_i,n}<\frac{\pi}{4}\;\land\;|v_R|>|v_{P_i}|$ |
+### Passing
+
+$$
+\boxed{
+\frac{3\pi}{4}
+<
+\lvert\theta_{P_i,n}-\theta_{R,n}\rvert
+<
+\pi
+}
+$$
+
+### Crossing
+
+$$
+\boxed{
+\frac{\pi}{4}
+<
+\theta_{P_i,n}-\theta_{R,n}
+<
+\frac{3\pi}{4}
+\quad\land\quad
+\lvert v_{P_i}\rvert>\lvert v_R\rvert
+}
+$$
+
+### Overtaking
+
+$$
+\boxed{
+0<
+\theta_{R,n}-\theta_{P_i,n}
+<
+\frac{\pi}{4}
+\quad\land\quad
+\lvert v_R\rvert>\lvert v_{P_i}\rvert
+}
+$$
 
 Here, $\theta_{P_i,n}$ and $\theta_{R,n}$ represent the heading values returned by the pedestrian and robot heading-normalization functions, respectively. Their differences are compared directly without additional wrapping.
 
@@ -299,9 +333,9 @@ $$
 \boxed{
 I_{\mathrm{norm}}=
 \begin{cases}
-1,&\text{if the first eligible pedestrian satisfies}\\
-&\text{passing, crossing, or overtaking}\\
-0,&\text{otherwise}
+1, & \text{if the first eligible pedestrian satisfies}\\
+   & \text{passing, crossing, or overtaking}\\
+0, & \text{otherwise}
 \end{cases}
 }
 $$
@@ -312,9 +346,10 @@ $$
 \boxed{
 R_{\mathrm{norm}}=
 \begin{cases}
-+0.005,&I_{\mathrm{norm}}=1
-\land(d_t-d_{t+1}>0.0002)\\
-0,&\text{otherwise}
++0.005, & I_{\mathrm{norm}}=1
+\;\land\;
+(d_t-d_{t+1}>0.0002)\\
+0, & \text{otherwise}
 \end{cases}
 }
 $$
@@ -322,7 +357,11 @@ $$
 The social-norm reward is already incorporated into the complete shaped reward function as:
 
 $$
-R_{\mathrm{norm}}=0.005I_{\mathrm{norm}}I_{\mathrm{progress}}
+\boxed{
+R_{\mathrm{norm}}
+=
+0.005I_{\mathrm{norm}}I_{\mathrm{progress}}
+}
 $$
 
 **Important:** If the first distance-eligible pedestrian fails all three interaction conditions, subsequent pedestrians are not evaluated during that step.
@@ -331,22 +370,93 @@ $$
 
 The `step()` function (lines 355–518) determines the final reward returned to the reinforcement learning algorithm.
 
+The following conditions are evaluated sequentially, from top to bottom.
+
+### Goal Reached
+
+**Condition:**
+
 $$
-\boxed{
-R_t=
-\begin{cases}
-R_{\mathrm{shaped}}\text{ with }I_{\mathrm{goal}}=1,
-&d_{t+1}\leq0.10\\[4pt]
--5.0,&|x_R|>2.0\ \lor\ |y_R|>2.0\\[4pt]
--5.0,&N_t>1500\\[4pt]
--8.0,&d_{\min}\leq0.21\\[4pt]
-R_{\mathrm{shaped}}\text{ with }I_{\mathrm{goal}}=0,
-&\text{otherwise}
-\end{cases}
-}
+d_{t+1}\leq0.10
 $$
 
-The terminal conditions are evaluated sequentially, from top to bottom. Earlier conditions take priority over later conditions.
+**Reward:**
+
+$$
+R_t=R_{\mathrm{shaped}}
+\quad\text{with}\quad I_{\mathrm{goal}}=1
+$$
+
+The shaped reward includes the +5.0 goal-reaching bonus.
+
+**Episode terminates:** Yes.
+
+### Boundary Exceeded
+
+**Condition:**
+
+$$
+\lvert x_R\rvert>2.0
+\quad\lor\quad
+\lvert y_R\rvert>2.0
+$$
+
+**Reward:**
+
+$$
+R_t=-5.0
+$$
+
+**Episode terminates:** Yes.
+
+### Maximum Steps Exceeded
+
+**Condition:**
+
+$$
+N_t>1500
+$$
+
+**Reward:**
+
+$$
+R_t=-5.0
+$$
+
+**Episode terminates:** Yes.
+
+### Collision with a Pedestrian
+
+**Condition:**
+
+$$
+d_{\min}\leq0.21
+$$
+
+**Reward:**
+
+$$
+R_t=-8.0
+$$
+
+**Episode terminates:** Yes.
+
+### Normal Navigation or Qualifying Social Interaction
+
+**Condition:** None of the preceding terminal conditions is satisfied.
+
+**Reward:**
+
+$$
+R_t=R_{\mathrm{shaped}}
+\quad\text{with}\quad I_{\mathrm{goal}}=0
+$$
+
+The shaped reward may include the additional +0.005 social-norm bonus when its conditions are satisfied.
+
+**Episode terminates:** No.
+
+### Summary of Reward Outcomes
 
 | Outcome | Reward | Episode Terminates |
 |---|---|---|
@@ -356,6 +466,9 @@ The terminal conditions are evaluated sequentially, from top to bottom. Earlier 
 | Collision with any pedestrian | −8.0 | Yes |
 | Normal navigation | Shaped reward | No |
 | Qualifying social interaction | Shaped reward, potentially including +0.005 | No |
+
+**Note:** Terminal conditions are checked in the order shown above. The first satisfied condition determines the reward and termination status for that step.
+
 
 
 
