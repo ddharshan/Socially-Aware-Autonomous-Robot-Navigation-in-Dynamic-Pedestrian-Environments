@@ -27,7 +27,7 @@ This repository presents an extension of my MSc research on autonomous mobile ro
 | Dynamic pedestrians | 3 | **6** |
 | Environment field-size parameter | 1 | **2** |
 | Maximum episode length | 1,000 steps | **1,500 steps** |
-| State observation | Earlier configuration | **60-dimensional observation** |
+| State observation | 20 observation | **60-dimensional observation** |
 | Reinforcement learning | Hybrid PPO | Hybrid PPO with extensive checkpoint-based fine-tuning |
 | Reward design | Goal progress, collision avoidance and pedestrian social norms | Additional near-goal behaviour, goal-directed social reward, pedestrian-proximity and boundary-proximity shaping |
 | Evaluation | **Only 30-episode randomized tests** | Repeated **1,000-episode randomized tests**, plus visual demonstrations through MP4 video results |
