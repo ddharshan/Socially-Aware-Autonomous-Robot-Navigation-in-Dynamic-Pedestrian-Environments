@@ -1,4 +1,6 @@
 # Socially Aware Autonomous Robot Navigation in Dynamic Pedestrian Environments
+<img width="744" height="300" alt="image" src="https://github.com/user-attachments/assets/0a1fa5f4-6d20-4c5a-b47e-0855f419ec70" />
+
 
 **Extended MSc research | Deep Reinforcement Learning | Hybrid Proximal Policy Optimization (H-PPO) | Python**
 
