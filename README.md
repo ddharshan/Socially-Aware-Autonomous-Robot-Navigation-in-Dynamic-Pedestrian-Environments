@@ -1,16 +1,13 @@
 # Socially Aware Autonomous Robot Navigation in Dynamic Pedestrian Environments
 
-<img width="625" height="328" alt="image" src="https://github.com/user-attachments/assets/28ceb23c-ff09-4cc2-bdba-16d2b924bba3" />
-
-<img width="634" height="313" alt="image" src="https://github.com/user-attachments/assets/1218195d-bf79-446e-91aa-5920b67835a3" />
-
-
-
-
-
 **Extended MSc research | Deep Reinforcement Learning | Hybrid Proximal Policy Optimization (H-PPO) | Python**
 
+ <img width="541" height="304" alt="image" src="https://github.com/user-attachments/assets/10fd28f9-e375-4762-a717-9e725b3b7d3f" />
+
 This repository presents an extension of my MSc research on autonomous mobile robot navigation in dynamic pedestrian environments. It investigates whether a Hybrid Proximal Policy Optimization (H-PPO) agent can learn goal-directed, collision-aware and socially aware navigation in a more challenging simulated environment with **six moving pedestrians**. The work includes simulation development, reward-function redesign, hyperparameter experiments, checkpoint-based fine-tuning and repeated randomized evaluation.
+
+![Uploading image.png…]()
+
 
 <img width="245" height="208" alt="image" src="https://github.com/user-attachments/assets/cb3a821b-e647-476f-ac36-94bb6ee71cfb" />
 
