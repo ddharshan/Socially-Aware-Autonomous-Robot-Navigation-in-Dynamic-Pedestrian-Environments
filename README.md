@@ -184,7 +184,7 @@ The environment implements a reward-shaping function to encourage goal-directed 
 
 ## 1. Complete Shaped Reward Function
 
-The shaped reward is calculated by the `get_reward()` function (lines 722–824 of `environments.py`).
+ 
 
 $$
 \boxed{
