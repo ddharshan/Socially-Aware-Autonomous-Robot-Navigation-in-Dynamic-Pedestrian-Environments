@@ -325,6 +325,12 @@ $$
 }
 $$
 
+<img width="609" height="307" alt="image" src="https://github.com/user-attachments/assets/54e773d1-307e-4943-b7eb-b63d0cfbcd9f" />
+<img width="604" height="319" alt="image" src="https://github.com/user-attachments/assets/e7e45bae-8331-473c-bfd6-78427ed457b3" />
+<img width="593" height="320" alt="image" src="https://github.com/user-attachments/assets/989869ae-121e-495b-8cdf-abd5d62e355e" />
+
+
+
 Here, $\theta_{P_i,n}$ and $\theta_{R,n}$ represent the heading values returned by the pedestrian and robot heading-normalization functions, respectively. Their differences are compared directly without additional wrapping.
 
 ### Social-Norm Indicator
@@ -484,7 +490,7 @@ $$
 | Normal navigation | Shaped reward | No |
 | Qualifying social interaction | Shaped reward, potentially including +0.005 | No |
 
-**Note:** Terminal conditions are checked in the order shown above. The first satisfied condition determines the reward and termination status for that step.
+ 
 
 
 
