@@ -85,8 +85,19 @@ Finally selected the best path "path-71-good" and validate over 3 x 1,000 episod
 
 ```
 
-<img width="411" height="165" alt="image" src="https://github.com/user-attachments/assets/60bae6f6-6b9c-419a-b75e-74dbd1ec049f" />
-<img width="417" height="192" alt="image" src="https://github.com/user-attachments/assets/68256dae-1124-4738-a32d-920619c4fef0" />
+
+### TensorBoard Training Results
+
+**Collector Mean Reward**
+
+ <img width="411" height="165" alt="image" src="https://github.com/user-attachments/assets/9469f93f-62de-4275-af26-3b3a1fb094e6" />
+
+
+**Evaluator Mean Reward**
+
+ <img width="417" height="192" alt="image" src="https://github.com/user-attachments/assets/1a929570-6e04-40b8-8522-1f5c3757b2b7" />
+
+
 
 As shown in the TensorBoard graphs above, the model's mean reward progressively improves with each successive best-checkpoint training run.
 
