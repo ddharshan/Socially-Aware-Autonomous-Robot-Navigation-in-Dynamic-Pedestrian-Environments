@@ -362,11 +362,10 @@ R_{\mathrm{norm}} = 0.005 I_{\mathrm{norm}} I_{\mathrm{progress}}
 $$
 
 
-**Important:** If the first distance-eligible pedestrian fails all three interaction conditions, subsequent pedestrians are not evaluated during that step.
+
 
 ## 4. Complete Terminal Reward Conditions
 
-The `step()` function (lines 355–518) determines the final reward returned to the reinforcement learning algorithm.
 
 The following conditions are evaluated sequentially, from top to bottom.
 
@@ -453,6 +452,26 @@ $$
 The shaped reward may include the additional +0.005 social-norm bonus when its conditions are satisfied.
 
 **Episode terminates:** No.
+
+
+$$
+\boxed{
+R_t =
+\begin{cases}
+R_{\mathrm{shaped}}\text{ with }I_{\mathrm{goal}}=1,
+& d_{t+1}\leq 0.10\\
+-5.0,
+& \lvert x_R\rvert>2.0\;\lor\;\lvert y_R\rvert>2.0\\
+-5.0,
+& N_t>1500\\
+-8.0,
+& d_{\min}\leq 0.21\\
+R_{\mathrm{shaped}}\text{ with }I_{\mathrm{goal}}=0,
+& \text{otherwise}
+\end{cases}
+}
+$$
+
 
 ### Summary of Reward Outcomes
 
