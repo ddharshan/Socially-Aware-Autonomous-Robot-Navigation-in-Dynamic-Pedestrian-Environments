@@ -178,7 +178,55 @@ The final selected model, **`path-71-good`**, achieved an average goal-reaching 
 
 **Combined success:** (851 + 849 + 865) / 3,000 = **85.5%**.
 
+
+
  
+## H-PPO Checkpoint Performance Evaluation and Training Progress
+
+This section evaluates successive H-PPO training checkpoints using TensorBoard metrics, focusing on evaluation rewards, learning quality, computational speed, and training efficiency.
+
+### 1. Checkpoint Performance Evaluation Metrics
+
+The following eight metrics were used to compare training performance across checkpoints.
+
+| No. | Metric Name | Short Description | Purpose | Preferred Direction |
+|---|---|---|---|---|
+| 1 | `eval_latest_smoothed` | Latest smoothed evaluation reward | Measures the final recorded smoothed evaluation performance | Higher is better |
+| 2 | `eval_best_smoothed` | Best smoothed evaluation reward | Identifies the highest smoothed evaluation reward achieved | Higher is better |
+| 3 | `eval_time_to_smoothed_1_0_hr` | Time to reach reward 1.0 | Measures the time required to reach a smoothed evaluation reward of 1.0 | Lower is better |
+| 4 | `eval_time_to_smoothed_0_5_hr` | Time to reach reward 0.5 | Measures the time required to reach a smoothed evaluation reward of 0.5 | Lower is better |
+| 5 | `collector_delta_steps_per_hour_million` | Environment steps collected per hour | Primary computational throughput metric | Higher is better |
+| 6 | `eval_latest_relative_hr` | Latest evaluation time | Indicates elapsed training time at the final evaluation | Used for fair comparison |
+| 7 | `eval_best_smoothed_relative_hr` | Time to best smoothed reward | Indicates when the highest smoothed evaluation reward was achieved | Lower is better for comparable rewards |
+| 8 | `collector_steps_per_hour_million` | TensorBoard-style steps per hour | Secondary computational throughput metric | Higher is better |
+
+### 2. Training Progress: Path-1 to fast_from_best18
+
+The checkpoint evaluation revealed progressive improvements in H-PPO training performance.
+
+- **Path-1 to Path-3:** Poor initial learning performance, with low or negative evaluation rewards.
+- **Path-4 to Path-10:** Gradual improvements as the robot developed more effective navigation behaviour.
+- **Path-11 to Path-14:** Significant improvement, with Path-14 achieving a peak smoothed evaluation reward of approximately **1.56**.
+- **Path-15 to Path-17:** Temporary performance fluctuations, followed by recovery.
+- **Path-18 to Path-19:** Strong evaluation performance, with faster learning and improved rewards.
+- **fast_from_best18:** Achieved faster training at approximately **2.33 million environment steps per hour**, with promising evaluation performance, although its best evaluation reward remained slightly below the strongest earlier runs.
+
+### 3. Key Performance Indicators
+
+The evaluation metrics are grouped into three categories:
+
+- **Computational Speed:** `collector_delta_steps_per_hour_million` measures environment-step collection efficiency. Higher is better.
+- **Learning Quality:** `eval_latest_smoothed` and `eval_best_smoothed` measure the latest and best smoothed evaluation rewards. Higher is better.
+- **Learning Speed:** `eval_time_to_smoothed_0_5_hr`, `eval_time_to_smoothed_1_0_hr`, and `eval_best_smoothed_relative_hr` measure how quickly reward milestones are achieved. Lower is better for comparable performance.
+
+### 4. Overall Training Performance and Key Findings
+
+H-PPO training showed progressive improvements in evaluation rewards and learning efficiency. **Checkpoint-based fine-tuning**, which initializes each successive run from a previously saved best checkpoint, enabled continued learning without restarting from scratch.
+
+However, collision avoidance and social compliance require separate validation through navigation tests, as higher evaluation rewards alone do not guarantee successful navigation.
+
+
+
 
 
 ### Selected checkpoints during development
