@@ -12,9 +12,10 @@ This repository presents an extension of my MSc research on autonomous mobile ro
 
 
 
-<img width="245" height="208" alt="image" src="https://github.com/user-attachments/assets/cb3a821b-e647-476f-ac36-94bb6ee71cfb" />
+<img width="1065" height="720" alt="Screenshot 2026-10-19 052818" src="https://github.com/user-attachments/assets/4919654f-b02a-4644-9969-c1b13cb59437" />
 
-> **Key result:** The selected **`path-71-good`** checkpoint achieved **85.5% mean goal-reaching success across three independent 1,000-episode simulation evaluations** (85.1%, 84.9% and 86.5%). The best individual evaluation was **86.5%**. These are **simulation results**, not physical-robot performance claims.
+
+**Key result:** The selected **`path-71-good`** checkpoint achieved **85.5% mean goal-reaching success across three independent 1,000-episode simulation evaluations** (85.1%, 84.9% and 86.5%). The best individual evaluation was **86.5%**. These are **simulation results**, not physical-robot performance claims.
 
 ## Research objectives
 
