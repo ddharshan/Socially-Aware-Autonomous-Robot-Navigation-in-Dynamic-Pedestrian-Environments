@@ -88,22 +88,7 @@ Finally selected the best path "path-71-good" and validate over 3 x 1,000 episod
 ```
 
 
-### TensorBoard Training Results
 
-**Collector Mean Reward**
-
- <img width="769" height="360" alt="image" src="https://github.com/user-attachments/assets/68058b9a-fb37-411e-843a-1a5df5bdd6ec" />
-
-
-
-**Evaluator Mean Reward**
-
- <img width="778" height="384" alt="image" src="https://github.com/user-attachments/assets/c8dae841-bff9-45f2-a7fe-1491a854dd83" />
-
-
-
-
-As shown in the TensorBoard graphs above, the model's mean reward progressively improves with each successive best-checkpoint training run.
 
 ## Main Experiments and Lessons Learned
 
@@ -180,10 +165,27 @@ The final selected model, **`path-71-good`**, achieved an average goal-reaching 
 
 
 
+### TensorBoard Training Results
+
+**Collector Mean Reward**
+
+ <img width="769" height="360" alt="image" src="https://github.com/user-attachments/assets/68058b9a-fb37-411e-843a-1a5df5bdd6ec" />
+
+
+
+**Evaluator Mean Reward**
+
+ <img width="778" height="384" alt="image" src="https://github.com/user-attachments/assets/c8dae841-bff9-45f2-a7fe-1491a854dd83" />
+
+
+As shown in the TensorBoard graphs above, the model's mean reward progressively improves with each successive best-checkpoint training run.
+
  
 ## H-PPO Checkpoint Performance Evaluation and Training Progress
 
 This section evaluates successive H-PPO training checkpoints using TensorBoard metrics, focusing on evaluation rewards, learning quality, computational speed, and training efficiency.
+
+<img width="1445" height="1566" alt="s" src="https://github.com/user-attachments/assets/657e04e9-1de6-4d37-a2ab-d5b83305b2cc" /> 
 
 ### 1. Checkpoint Performance Evaluation Metrics
 
@@ -224,7 +226,7 @@ The evaluation metrics are grouped into three categories:
 H-PPO training showed progressive improvements in evaluation rewards and learning efficiency. **Checkpoint-based fine-tuning**, which initializes each successive run from a previously saved best checkpoint, enabled continued learning without restarting from scratch. However, collision avoidance and social compliance require separate validation through navigation tests, as higher evaluation rewards alone do not guarantee successful navigation.
 
 
-<img width="1445" height="1566" alt="s" src="https://github.com/user-attachments/assets/657e04e9-1de6-4d37-a2ab-d5b83305b2cc" />
+
 
 
 
