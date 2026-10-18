@@ -175,6 +175,84 @@ Three additional **30-episode** evaluations of **path-71-good** each achieved **
 
 The evaluation workflow records goal-reaching success, pedestrian collisions, boundary violations, timeouts/stuck failures, average reward, episode steps/time, minimum pedestrian separation, social-norm compliance, average speed and motion smoothness.
 
+
+## Reward Function
+
+The environment implements a reward-shaping function to encourage goal-directed navigation, collision avoidance, socially aware pedestrian interactions, boundary safety, and controlled movement near the goal.
+
+### 1. Overall Reward Function
+
+The shaped reward is defined as:
+
+$$
+\boxed{
+\begin{aligned}
+R_{\text{shaped}}={}&3.0(d_t-d_{t+1})-0.001\\
+&+5.0I_{\text{goal}}\\
+&+0.005I_{\text{norm}}I_{\text{progress}}\\
+&-0.65\max(0,0.30-d_{\min})\\
+&-0.05\max(0,0.20-d_{\text{boundary}})\\
+&-0.02|v_R|I_{\text{slow}}\\
+&-0.002I_{\text{stuck}}
+\end{aligned}
+}
+$$
+
+where:
+
+- $d_t$ and $d_{t+1}$ are the robot-to-goal distances before and after the action.
+- $d_{\min}=\min(d_1,\ldots,d_6)$ is the minimum Euclidean distance between the robot and six pedestrians.
+- $d_{\text{boundary}}=2.0-\max(|x_R|,|y_R|)$ is the robot's clearance from the square environment boundary.
+- $v_R$ is the robot's speed after the action.
+- $I$ represents a binary indicator (1 when its condition is satisfied, otherwise 0).
+
+### 2. Reward Components
+
+| Reward component | Value / condition | Purpose |
+|---|---|---|
+| **Goal progress** | $3.0(d_t-d_{t+1})$ | Rewards movement toward the goal. |
+| **Time penalty** | $-0.001$ per step | Encourages efficient navigation. |
+| **Goal achievement** | $+5.0$ if $d_{t+1}\leq0.10$ | Rewards successful goal reaching. |
+| **Social-norm reward** | $+0.005$ if $I_{\text{norm}}=1$ and $d_t-d_{t+1}>0.0002$ | Rewards qualifying pedestrian interactions with positive goal progress. |
+| **Pedestrian proximity penalty** | $-0.65\max(0,0.30-d_{\min})$ | Discourages close approaches to pedestrians. |
+| **Boundary proximity penalty** | $-0.05\max(0,0.20-d_{\text{boundary}})$ | Discourages approaching environment boundaries. |
+| **Near-goal speed penalty** | $-0.02|v_R|$ if $d_{t+1}<0.30$ | Encourages slowing down near the goal. |
+| **Stuck penalty** | $-0.002$ if $|d_t-d_{t+1}|<0.0005$ and $d_{t+1}>0.30$, excluding goal completion | Discourages negligible progress away from the goal. |
+
+### 3. Social-Norm Reward Conditions
+
+The social-norm reward is evaluated when a pedestrian satisfies:
+
+$$
+0.30\leq d_i<0.35,\qquad d_{t+1}>0.40
+$$
+
+For an eligible pedestrian, the following conditions are checked:
+
+- **Passing:** $3\pi/4<|\theta_{P_i,n}-\theta_{R,n}|<\pi$
+- **Crossing:** $\pi/4<\theta_{P_i,n}-\theta_{R,n}<3\pi/4$ and $|v_{P_i}|>|v_R|$
+- **Overtaking:** $0<\theta_{R,n}-\theta_{P_i,n}<\pi/4$ and $|v_R|>|v_{P_i}|$
+
+Here, $\theta_{R,n}$ and $\theta_{P_i,n}$ are the heading values transformed by the environment's heading functions.
+
+Pedestrians are checked sequentially from P1 to P6. The first pedestrian satisfying the distance eligibility condition is evaluated for a social-norm interaction; later pedestrians are not checked during that step. The bonus is awarded only when the interaction condition and the minimum goal-progress requirement are both satisfied.
+
+### 4. Terminal Rewards
+
+| Terminal condition | Returned reward |
+|---|---|
+| **Goal reached:** $d_{t+1}\leq0.10$ | Shaped reward including the $+5.0$ goal bonus |
+| **Boundary violation:** $|x_R|>2.0$ or $|y_R|>2.0$ | $-5.0$ |
+| **Maximum steps exceeded:** step count $>1500$ | $-5.0$ |
+| **Collision:** $d_{\min}\leq0.21$ | $-8.0$ |
+
+Terminal conditions are checked in the order shown. Boundary violations, timeouts, and collisions return fixed penalties rather than the shaped reward. Otherwise, the shaped reward is returned.
+
+**Implementation:** `environments.py`, lines 355–518 (`step()` reward selection and social-norm conditions) and 722–824 (`get_reward()` calculations).
+
+
+
+
 ## Repository Structure
 
 ```text
