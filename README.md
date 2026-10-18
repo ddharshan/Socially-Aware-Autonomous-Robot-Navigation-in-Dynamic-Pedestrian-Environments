@@ -169,7 +169,7 @@ The final selected model, **`path-71-good`**, achieved an average goal-reaching 
 
 
 
-Three additional **30-episode** evaluations of `path-71-good` each recorded **24/30 successes (80%)**; these short evaluations are useful for demonstrations but are less representative than the larger tests.
+Three additional **30-episode** evaluations of **path-71-good** each achieved **24 successful episodes out of 30 (80% success rate)**. The MP4 videos of all three randomized evaluations are available in the **Final Random testing Results** folder of this GitHub repository. 
 
 ## Evaluation metrics
 
