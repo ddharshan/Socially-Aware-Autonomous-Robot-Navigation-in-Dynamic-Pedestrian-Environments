@@ -356,13 +356,11 @@ $$
 
 The social-norm reward is already incorporated into the complete shaped reward function as:
 
+
 $$
-\boxed{
-R_{\mathrm{norm}}
-=
-0.005I_{\mathrm{norm}}I_{\mathrm{progress}}
-}
+R_{\mathrm{norm}} = 0.005 I_{\mathrm{norm}} I_{\mathrm{progress}}
 $$
+
 
 **Important:** If the first distance-eligible pedestrian fails all three interaction conditions, subsequent pedestrians are not evaluated during that step.
 
