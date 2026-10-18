@@ -6,7 +6,7 @@
 
  <img width="541" height="304" alt="image" src="https://github.com/user-attachments/assets/10fd28f9-e375-4762-a717-9e725b3b7d3f" />
 
-This repository presents an extension of my MSc research on autonomous mobile robot navigation in dynamic pedestrian environments. It investigates whether a Hybrid Proximal Policy Optimization (H-PPO) agent can learn goal-directed, collision-aware and socially aware navigation in a more challenging simulated environment with **six moving pedestrians**. The work includes simulation development, reward-function redesign, hyperparameter experiments, checkpoint-based fine-tuning and repeated randomized evaluation.
+This repository presents an extension of my MSc research on autonomous mobile robot navigation in dynamic pedestrian environments. It investigates whether a Hybrid Proximal Policy Optimization (H-PPO) agent can learn goal-directed, collision-aware and socially aware navigation in a more challenging simulated environment with **six moving pedestrians**. The work includes simulation development, reward-function redesign, hyperparameter experiments, checkpoint-based fine-tuning and repeated randomized evaluation. In the new environment, robot start positions, goals, and pedestrian positions and directions are randomized, while pedestrian speeds remain fixed. Evaluated over 1,000 test episodes using unseen random seeds.
 
  <img width="484" height="250" alt="image" src="https://github.com/user-attachments/assets/2377982a-b16c-448c-accd-c909d603021c" />
 
