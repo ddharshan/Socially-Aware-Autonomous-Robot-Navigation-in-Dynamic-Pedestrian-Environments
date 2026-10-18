@@ -30,7 +30,7 @@ This repository presents an extension of my MSc research on autonomous mobile ro
 | State observation | 20 observation | **60-dimensional observation** |
 | Reinforcement learning | Hybrid PPO | Hybrid PPO with extensive checkpoint-based fine-tuning |
 | Reward design | Goal progress, collision avoidance and pedestrian social norms | Additional near-goal behaviour, goal-directed social reward, pedestrian-proximity and boundary-proximity shaping |
-| Evaluation | **Only 30-episode randomized tests** | Repeated **1,000-episode randomized tests**, plus visual demonstrations through MP4 video results |
+| Evaluation and success rate | **86.67% success rate Only in 30-episode randomized tests** | Repeated **1,000-episode randomized tests**. **The success rate is 85.5% mean goal-reaching success across three independent 1,000-episode simulation evaluations (85.1%, 84.9% and 86.5%). The best individual evaluation was 86.5%.**  |
 
 ## Research and experimental workflow
 
