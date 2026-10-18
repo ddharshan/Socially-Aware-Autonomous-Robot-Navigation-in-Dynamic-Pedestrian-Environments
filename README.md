@@ -1,5 +1,5 @@
 # Socially Aware Autonomous Robot Navigation in Dynamic Pedestrian Environments
-<img width="744" height="300" alt="image" src="https://github.com/user-attachments/assets/0a1fa5f4-6d20-4c5a-b47e-0855f419ec70" />
+ 
 
 
 **Extended MSc research | Deep Reinforcement Learning | Hybrid Proximal Policy Optimization (H-PPO) | Python**
@@ -92,12 +92,14 @@ Finally selected the best path "path-71-good" and validate over 3 x 1,000 episod
 
 **Collector Mean Reward**
 
- <img width="411" height="165" alt="image" src="https://github.com/user-attachments/assets/9469f93f-62de-4275-af26-3b3a1fb094e6" />
+ <img width="769" height="360" alt="image" src="https://github.com/user-attachments/assets/68058b9a-fb37-411e-843a-1a5df5bdd6ec" />
+
 
 
 **Evaluator Mean Reward**
 
- <img width="417" height="192" alt="image" src="https://github.com/user-attachments/assets/1a929570-6e04-40b8-8522-1f5c3757b2b7" />
+ <img width="778" height="384" alt="image" src="https://github.com/user-attachments/assets/c8dae841-bff9-45f2-a7fe-1491a854dd83" />
+
 
 
 
