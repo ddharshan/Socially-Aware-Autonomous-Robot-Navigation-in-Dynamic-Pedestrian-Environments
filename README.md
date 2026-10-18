@@ -159,7 +159,7 @@ The final selected model, **`path-71-good`**, achieved an average goal-reaching 
 | Checkpoint | Example recorded 1,000-episode success rate | Research significance |
 | --- | ---: | --- |
 | `path-42` | 75.6% | Established larger-scale performance baseline for this extension |
-| `path-59` | 74.8% | Revealed social-reward-seeking behaviour despite promising short tests |
+| `path-59` | 74.8% | Revealed social-reward-seeking behaviour in 5 of 12 successful episodes, where the robot actively sought pedestrians to earn rewards for respecting social norms while moving away from the goal rather than towards it. This reward conflict led to a modification of the reward function, allowing social-norm rewards only when the robot makes progress towards the goal. |
 | `path-63-2` | 83.1% | Strong intermediate checkpoint |
 | `path-66` | 83.3% | Protected starting point for later fine-tuning |
 | **`path-71-good`** | **86.5%** | **Selected model; 85.5% mean over three tests** |
