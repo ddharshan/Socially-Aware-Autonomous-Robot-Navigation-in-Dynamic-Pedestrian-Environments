@@ -216,16 +216,15 @@ The checkpoint evaluation revealed progressive improvements in H-PPO training pe
 The evaluation metrics are grouped into three categories:
 
 - **Computational Speed:** `collector_delta_steps_per_hour_million` measures environment-step collection efficiency. Higher is better.
-- **Learning Quality:** `eval_latest_smoothed` and `eval_best_smoothed` measure the latest and best smoothed evaluation rewards. Higher is better.
+- **Learning Quality:** `eval_latest_smoothed` and `eval_best_smoothed` measure the latest and best smoothed evaluation rewards. Higher is better (Tracks improvements in the current and best-performing policies.).
 - **Learning Speed:** `eval_time_to_smoothed_0_5_hr`, `eval_time_to_smoothed_1_0_hr`, and `eval_best_smoothed_relative_hr` measure how quickly reward milestones are achieved. Lower is better for comparable performance.
 
 ### 4. Overall Training Performance and Key Findings
 
-H-PPO training showed progressive improvements in evaluation rewards and learning efficiency. **Checkpoint-based fine-tuning**, which initializes each successive run from a previously saved best checkpoint, enabled continued learning without restarting from scratch.
-
-However, collision avoidance and social compliance require separate validation through navigation tests, as higher evaluation rewards alone do not guarantee successful navigation.
+H-PPO training showed progressive improvements in evaluation rewards and learning efficiency. **Checkpoint-based fine-tuning**, which initializes each successive run from a previously saved best checkpoint, enabled continued learning without restarting from scratch. However, collision avoidance and social compliance require separate validation through navigation tests, as higher evaluation rewards alone do not guarantee successful navigation.
 
 
+<img width="1445" height="1566" alt="s" src="https://github.com/user-attachments/assets/657e04e9-1de6-4d37-a2ab-d5b83305b2cc" />
 
 
 
