@@ -8,6 +8,7 @@
 
 <div align="justify">
 
+
 This repository presents an extension of my MSc research on autonomous mobile robot navigation in dynamic pedestrian environments. It investigates whether a Hybrid Proximal Policy Optimization (H-PPO) agent can learn goal-directed, collision-aware and socially aware navigation in a more challenging simulated environment with **six moving pedestrians**. The work includes simulation development, reward-function redesign, hyperparameter experiments, checkpoint-based fine-tuning and repeated randomized evaluation. In the new environment, robot start positions, goals, and pedestrian positions and directions are randomized, while pedestrian speeds remain fixed. Evaluated over 1,000 test episodes using unseen random seeds.
 
 </div>
@@ -195,7 +196,8 @@ The final selected model, **`path-71-good`**, achieved an average goal-reaching 
 
 As shown in the TensorBoard graphs above, the model's mean reward progressively improves with each successive best-checkpoint training run.
 
- 
+<div align="justify">
+
 ## H-PPO Checkpoint Performance Evaluation and Training Progress
 
 This section evaluates successive H-PPO training checkpoints using TensorBoard metrics, focusing on evaluation rewards, learning quality, computational speed, and training efficiency.
@@ -650,6 +652,8 @@ For any questions or inquiries regarding this project, please feel free to conta
 ## License
 
 This repository includes an MIT license. Please check the licenses and attribution requirements of any third-party dependencies, frameworks or adapted code separately.
+
+</div>
 
 ---
 
