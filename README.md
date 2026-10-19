@@ -646,6 +646,14 @@ If you use this repository, its source code, or experimental results in your res
 For any questions or inquiries regarding this project, please feel free to contact me at ddharshan126@gmail.com.
 
 
+
+## Research DOI
+
+This research software is archived on Zenodo.
+
+**DOI:**  https://doi.org/10.5281/zenodo.23462337 
+
+
 ## License
 
 This repository includes an MIT license. Please check the licenses and attribution requirements of any third-party dependencies, frameworks or adapted code separately.
