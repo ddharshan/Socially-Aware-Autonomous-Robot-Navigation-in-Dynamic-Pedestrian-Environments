@@ -239,7 +239,7 @@ H-PPO training showed progressive improvements in evaluation rewards and learnin
 
 
 
-### Hyperparameter Tuning for PPO Policy Stability
+## Hyperparameter Tuning for PPO Policy Stability
 
 Initially, aggressive hyperparameters (`learning_rate = 3e-5`, `clip_ratio = 0.07`, `entropy_weight = 0.003`, `epoch_per_collect = 3`) accelerated learning but also increased PPO update pressure, causing policy instability and training crashes. Consequently, **Paths 60, 60-2, 61, 61-2, and 62 failed** following social-norm reward modifications.
 
