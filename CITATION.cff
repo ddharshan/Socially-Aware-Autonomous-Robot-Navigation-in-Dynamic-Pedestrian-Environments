@@ -1,0 +1,10 @@
+
+cff-version: 1.2.0
+message: "If you use this research or software, please cite this repository."
+type: software
+authors:
+  - family-names: "Seetharaman"
+    given-names: "Dhivyadharshan"
+title: "Socially Aware Autonomous Robot Navigation in Dynamic Pedestrian Environments"
+url: "https://github.com/ddharshan/Socially-Aware-Autonomous-Robot-Navigation-in-Dynamic-Pedestrian-Environments"
+license: MIT
