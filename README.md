@@ -175,7 +175,8 @@ The final selected model, **`path-71-good`**, achieved an average goal-reaching 
 
 
 
-### TensorBoard Training Results
+
+## TensorBoard Training Results
 
 **Collector Mean Reward**
 
