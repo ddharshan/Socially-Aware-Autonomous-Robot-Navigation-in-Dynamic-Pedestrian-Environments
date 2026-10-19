@@ -45,7 +45,7 @@ This repository presents an extension of my MSc research on autonomous mobile ro
 
 
 
-## What changed compared with the MSc work?
+## What Changed Compared with My Previous MSc Research?
 
 | Aspect | Original MSc work | Extended research |
 | --- | --- | --- |
