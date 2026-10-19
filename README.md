@@ -407,7 +407,8 @@ $$
 }
 $$
 
-<img width="609" height="307" alt="image" src="https://github.com/user-attachments/assets/de63adcc-457f-4af4-8356-8a86238378a1" />
+<img width="1345" height="666" alt="Passing" src="https://github.com/user-attachments/assets/118a881a-9b3c-473f-9f86-95513fcdefc8" />
+
 
 
 ### Crossing
@@ -424,7 +425,8 @@ $$
 }
 $$
 
-<img width="610" height="326" alt="image" src="https://github.com/user-attachments/assets/3bd2e2e5-2775-4ae9-909d-b4871353c894" />
+<img width="1557" height="814" alt="Crossing" src="https://github.com/user-attachments/assets/f39caa33-4fca-4928-b593-54e53e030197" />
+
 
 
 ### Overtaking
@@ -440,7 +442,7 @@ $$
 }
 $$
 
-<img width="618" height="327" alt="image" src="https://github.com/user-attachments/assets/a1000c80-b0d5-4f09-a326-cc6a4747cd60" />
+ <img width="1514" height="827" alt="Overtaking" src="https://github.com/user-attachments/assets/d445bf7c-5b40-4588-a70b-0bdc8d17c6c1" />
 
 
 Here, $\theta_{P_i,n}$ and $\theta_{R,n}$ represent the heading values returned by the pedestrian and robot heading-normalization functions, respectively. Their differences are compared directly without additional wrapping.
