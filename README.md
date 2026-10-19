@@ -126,11 +126,7 @@ Subsequent evaluations showed a reduction in goal-circling behaviour.
 
 ### 3. Collision Avoidance and Social-Norm Reward Alignment
 
-Initial large-scale evaluations revealed relatively high collision rates. To improve collision avoidance, the terminal collision penalty was increased from **−5 to −8**.
-
-Further evaluations identified an unintended behaviour in which the robot occasionally approached pedestrians to obtain social-norm rewards rather than progressing toward its destination.
-
-To address this issue, the social-norm reward was modified to be conditional on **goal-directed progress**, encouraging socially compliant navigation while maintaining progress toward the target.
+Initial large-scale evaluations revealed relatively high collision rates. To improve collision avoidance, the terminal collision penalty was increased from **−5 to −8**. Further evaluations identified an unintended behaviour in which the robot occasionally approached pedestrians to obtain social-norm rewards rather than progressing toward its destination. To address this issue, the social-norm reward was modified to be conditional on **goal-directed progress**, encouraging socially compliant navigation while maintaining progress toward the target.
 
 ### 4. Pedestrian and Boundary Safety Reward Shaping
 
@@ -146,9 +142,7 @@ The selected **`path-71-good`** model was obtained by fine-tuning a previously i
 
 ### 5. Reliable Model Selection and Performance Evaluation
 
-Initial evaluations demonstrated that achieving a high success rate over only 12 episodes was insufficient to establish reliable navigation performance.
-
-Therefore, selected checkpoints were evaluated across hundreds or thousands of randomized episodes, including repeated **1,000-episode evaluations**.
+Initial evaluations demonstrated that achieving a high success rate over only 12 episodes was insufficient to establish reliable navigation performance. Therefore, selected checkpoints were evaluated across hundreds or thousands of randomized episodes, including repeated **1,000-episode evaluations**.
 
 Model selection was based on:
 
