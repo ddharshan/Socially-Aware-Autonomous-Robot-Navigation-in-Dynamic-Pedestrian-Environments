@@ -103,7 +103,7 @@ Finally selected the best path "path-71-good" and validate over 3 x 1,000 episod
 ```
 
 
-
+<div align="justify">
 
 ## Main Experiments and Lessons Learned
 
@@ -160,7 +160,7 @@ Model selection was based on:
 
 The final selected model, **`path-71-good`**, achieved an average goal-reaching success rate of **85.5% across three independent 1,000-episode simulation evaluations**, with the highest individual success rate reaching **86.5%**.
 
-
+</div>
 
 
 ## Quantitative results
