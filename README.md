@@ -627,6 +627,7 @@ $$
 
 ```
 
+
 ## Citing This Repository
 
 If you use this repository, its source code, or experimental results in your research, please cite:
@@ -642,6 +643,8 @@ If you use this repository, its source code, or experimental results in your res
   url          = {https://github.com/ddharshan/Socially-Aware-Autonomous-Robot-Navigation-in-Dynamic-Pedestrian-Environments}
 }
 ```
+
+For any questions or inquiries regarding this project, please feel free to contact me at ddharshan126@gmail.com.
 
 
 ## License
