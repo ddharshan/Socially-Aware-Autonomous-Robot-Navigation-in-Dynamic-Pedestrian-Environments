@@ -64,7 +64,7 @@ Original MSc H-PPO navigation environment
                  |
                  v
 Extend environment to 6 moving pedestrians
-(field size 2, 1,500 steps, 60 observations)
+(field size 2, 1500 steps, 60 observations)
                  |
                  v
 Train H-PPO and save best checkpoints
