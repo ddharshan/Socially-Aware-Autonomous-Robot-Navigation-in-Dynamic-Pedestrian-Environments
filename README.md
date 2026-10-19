@@ -615,8 +615,8 @@ $$
 
 ```text
 .
-├── Final Random testing Results/       # Randomized navigation evaluation results of the final **`path-71-good`**
-├── Finally trained best path/          # Best trained H-PPO model and checkpoint files of the final **`path-71-good`**
+├── Final Random testing Results/       # Randomized navigation evaluation results of the final "path-71-good"
+├── Finally trained best path/          # Best trained H-PPO model and checkpoint files of the final "path-71-good"
 ├── RLAutonomousRobotNavigation2/       # Custom robot-navigation simulation environment
 ├── RobotTraining2/                     # H-PPO training, configuration, and evaluation code
 ├── .gitignore                          # Git ignore configuration
