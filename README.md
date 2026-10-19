@@ -278,7 +278,7 @@ Therefore, **hyperparameters were tuned several times to reduce aggressive PPO p
 
 
 
-Three additional **30-episode** evaluations of **path-71-good** each achieved **24 successful episodes out of 30 (80% success rate)**. The MP4 videos of all three randomized evaluations are available in the **Final Random testing Results** folder of this GitHub repository. Moreover, the final best checkpoint, path-71-good, is available in the Finally trained best path folder of this repository, under AutonomousRobotNavigation2_hppo_seed0-the best path-71-Final best path.
+Three additional **30-episode** evaluations of **path-71-good** each achieved **24 successful episodes out of 30 (80% success rate)**. The MP4 videos of all three randomized evaluations are available in the **Final Random testing Results** folder of this GitHub repository.  Moreover, the final best checkpoint, **path-71-good**, is available in the **Finally trained best path** folder of this repository, under **AutonomousRobotNavigation2_hppo_seed0-the best path-71-Final best path**.
 
 ## Evaluation metrics
 
